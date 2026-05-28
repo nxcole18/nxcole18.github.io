@@ -22,7 +22,7 @@
 /* ── Art Gallery ───────────────────────────────────────── */
 .art-gallery {
   background: var(--projects-bg);
-  padding: 64px 32px 80px;
+  padding: 10px 32px 80px;
 }
 
 .art-grid {
