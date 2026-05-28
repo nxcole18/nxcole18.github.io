@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nicole — text art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="textart.css" />
+</head>
+<body>
+
+  <!-- Top-left nav -->
+  <nav class="side-nav">
+    <div class="logo"><a href="index.html"><span>🧡 nl</span></a></div>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/nicole-lu-/" target="_blank">linkedin</a></li>
+      <li><a href="https://github.com/nxcole18" target="_blank">github</a></li>
+      <li><a href="textart.html" class="nav-active">text art</a></li>
+    </ul>
+  </nav>
+
+  
+
+  <!-- Hero -->
+  <main class="hero">
+    <h1 class="title" aria-label="text art!">
+      <span id="typewriter-text"></span><span class="cursor">|</span>
+    </h1>
+
+    <section class="currently fade-in">
+      <p class="section-label">what's this?</p>
+      <ul>
+        <li>✏️ a little corner for cute text art i've collected</li>
+        <li>🌙 ascii art, unicode doodles, and typed feelings</li>
+        <li>🎀 click any piece to copy it to your clipboard!</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Gallery -->
+  <section class="art-gallery fade-in">
+    <h2 class="projects-header">MY COLLECTION</h2>
+
+    <div class="art-grid">
+
+      <button class="art-card" data-art="(˶ᵔ ᵕ ᵔ˶)" aria-label="copy art">
+        <pre class="art-pre">(˶ᵔ ᵕ ᵔ˶)</pre>
+        <span class="art-label">happy face</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+      <button class="art-card" data-art="
+ /\_____/\
+(  o   o  )
+(  =^.^=  )
+ (  '--'  )" aria-label="copy art">
+        <pre class="art-pre"> /\_____/\
+(  o   o  )
+(  =^.^=  )
+ (  '--'  )</pre>
+        <span class="art-label">orange cat</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+      <button class="art-card" data-art="☆₊° . ★ ·˚ ༘ ☽ ✦ ·˚ ₊✧" aria-label="copy art">
+        <pre class="art-pre">☆₊° . ★ ·˚ ༘ ☽ ✦ ·˚ ₊✧</pre>
+        <span class="art-label">night sky</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+      <button class="art-card" data-art="
+    .-~~~-.
+  .(       ).
+ (___._____)
+  ' ' ' ' '" aria-label="copy art">
+        <pre class="art-pre">    .-~~~-.
+  .(       ).
+ (___._____)
+  ' ' ' ' '</pre>
+        <span class="art-label">pretty sky</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+      <button class="art-card" data-art="♩ ♪ ♫ ♬ ♩ ♪ ♫" aria-label="copy art">
+        <pre class="art-pre">♩ ♪ ♫ ♬ ♩ ♪ ♫</pre>
+        <span class="art-label">music notes</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+      <button class="art-card" data-art="
+·˚ ༘ ₊˚ˑ
+  ✦ · ˚
+˚ · ✦ ˑ˚
+  ₊˚ ·˚" aria-label="copy art">
+        <pre class="art-pre">·˚ ༘ ₊˚ˑ
+  ✦ · ˚
+˚ · ✦ ˑ˚
+  ₊˚ ·˚</pre>
+        <span class="art-label">starfield</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+      <button class="art-card" data-art="
+  _____
+ |     |
+ | UBC |
+ |_____|
+   | |
+  _|_|_" aria-label="copy art">
+        <pre class="art-pre">  _____
+ |     |
+ | UBC |
+ |_____|
+   | |
+  _|_|_</pre>
+        <span class="art-label">ubc building</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+      <button class="art-card" data-art="(っ◔◡◔)っ ♥" aria-label="copy art">
+        <pre class="art-pre">(っ◔◡◔)っ ♥</pre>
+        <span class="art-label">giving heart</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+      <button class="art-card" data-art="
+  *    .  *
+.   *   .
+  .   *
+*   .    *" aria-label="copy art">
+        <pre class="art-pre">  *    .  *
+.   *   .
+  .   *
+*   .    *</pre>
+        <span class="art-label">scattered stars</span>
+        <span class="copy-hint">click to copy</span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast">✓ copied to clipboard!</div>
+
+  <script src="textart.js"></script>
+</body>
+</html>
