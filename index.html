@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🧡 nicole's portfolio</title>
+  <title>nicole's portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='85'>🧡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -27,8 +28,10 @@
       <span id="typewriter-text"></span><span class="cursor">|</span>
     </h1>
 
+
+    <!-- Subtitle Sections -->
     <section class="currently fade-in">
-      <p class="section-label">currently:</p>
+      <p class="section-label">welcome to my page!</p>
       <ul>
         <li>💡 e-commerce merchandising and analytics @ oro eyewear</li>
         <li>🎨 launching an etsy store for my art</li>
@@ -37,14 +40,15 @@
     </section>
 
     <section class="inspired fade-in">
-      <p class="section-label">things that bring me joy:</p>
+      <p class="section-label">passionate about:</p>
       <div class="tags">
         <span class="tag">solving problems</span>
         <span class="tag">playing piano</span>
-        <span class="tag">being creative</span>
+        <span class="tag">creating</span>
         <span class="tag">sunsets</span>
         <span class="tag">tea lattes</span>
         <span class="tag">cats</span>
+        <span class="tag">taking nice photos</span>
       </div>
     </section>
 
@@ -52,32 +56,79 @@
     <p class="deco fade-in">✨🌅🧡🫧🌤️☁⋆˚࿔</p>
   </main>
 
+  <!-- Scattered Photos Elements -->
+  <div class="photo-scatter fade-in" aria-hidden="true">
+
+    <button class="scatter-photo" style="top: 160px; right: 340px; transform: rotate(3deg);"
+      data-src="photos/photo1.jpg" data-name="photo1.jpg">
+      <div class="photo-placeholder p1"></div>
+      <span class="photo-label">photo1.jpg</span>
+    </button>
+
+    <button class="scatter-photo" style="top: 360px; left: 230px; transform: rotate(-4deg);"
+      data-src="photos/photo2.jpg" data-name="photo2.jpg">
+      <div class="photo-placeholder p2"></div>
+      <span class="photo-label">photo2.jpg</span>
+    </button>
+
+    <button class="scatter-photo" style="top: 520px; left: 290px; transform: rotate(2deg);"
+      data-src="photos/photo3.jpg" data-name="photo3.jpg">
+      <div class="photo-placeholder p3"></div>
+      <span class="photo-label">photo3.jpg</span>
+    </button>
+
+    <button class="scatter-photo" style="top: 460px; right: 240px; transform: rotate(-2deg);"
+      data-src="photos/photo4.jpg" data-name="photo4.jpg">
+      <div class="photo-placeholder p4"></div>
+      <span class="photo-label">photo4.jpg</span>
+    </button>
+
+    <button class="scatter-photo" style="top: 380px; right: 160px; transform: rotate(5deg);"
+      data-src="photos/photo5.jpg" data-name="photo5.jpg">
+      <div class="photo-placeholder p5"></div>
+      <span class="photo-label">photo5.jpg</span>
+    </button>
+
+  </div>
+ 
+  <!-- Lightbox Photo Views -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="close">✕</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-frame">
+        <img id="lightbox-img" src="" alt="" />
+        <span class="lightbox-label" id="lightbox-label"></span>
+      </div>
+    </div>
+  </div>
+
   <!-- Projects Section -->
   <section class="projects fade-in">
     <h2 class="projects-header">MY BUILDS 🛠️</h2>
 
     <a class="project-card" href="#" target="_blank">
-      <div class="project-image watsonx-bg"></div>
+      <div class="project-image alpha-bg"></div>
       <div class="project-info">
         <h3>cocoa delicacy <span class="arrow">↗</span></h3>
         <p class="project-tags">LOREM ✦ IPSUM ✦ LOREM</p>
         <p class="project-desc">description about my project here!</p>
-        <p class="project-stat">🌿 project stat</p>
+        <p class="project-stat">💡 project stat</p>
         <!-- <span class="star">★</span> -->
       </div>
     </a>
 
     <a class="project-card" href="#" target="_blank">
-      <div class="project-image eden-bg"></div>
+      <div class="project-image beta-bg"></div>
       <div class="project-info">
         <h3>db manager <span class="arrow">↗</span></h3>
         <p class="project-tags">LOREM ✦ IPSUM ✦ LOREM</p>
         <p class="project-desc">description about my project here!</p>
-        <p class="project-stat">🌿 project stat</p>
+        <p class="project-stat">💡 project stat</p>
       </div>
     </a>
   </section>
 
   <script src="main.js"></script>
+  <script src="photos.js"></script>
 </body>
 </html>

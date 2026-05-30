@@ -3,9 +3,9 @@
   --bg: #ffffff;
   --text: #1a1a1a;
   --muted: #555;
-  --pink: #f9c0d0;
+  --pink: #f9c0cc;
   --pink-highlight: rgba(255, 182, 206, 0.45);
-  --pink-dark: #e07095;
+  --pink-dark: #e07083;
   --tag-bg: #fff;
   --tag-border: #ccc;
   --card-bg: #fafaf8;
@@ -240,11 +240,11 @@ body {
   overflow: hidden;
 }
 
-.watsonx-bg {
+.alpha-bg {
   background: linear-gradient(135deg, #a8c8ff 0%, #3a7bd5 50%, #1a3faf 100%);
 }
 
-.eden-bg {
+.beta-bg {
   background: linear-gradient(135deg, #2d5a3d 0%, #1a3a27 60%, #0f2318 100%);
 }
 
@@ -337,4 +337,161 @@ body {
   .project-image {
     aspect-ratio: 16/9;
   }
+}
+
+/* ── Scattered Photos ──────────────────────────────────── */
+.photo-scatter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  pointer-events: none;
+  z-index: 10;
+}
+ 
+body { position: relative; }
+ 
+.scatter-photo {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  animation: photoFadeIn 5s ease forwards;
+  opacity: 0;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
+}
+
+@keyframes photoFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+.scatter-photo:hover {
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.18));
+  z-index: 20;
+}
+ 
+.photo-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(255,255,255,0.8);
+}
+ 
+.scatter-photo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(255,255,255,0.9);
+}
+ 
+/* Placeholder colors for photo files */
+.p1 { background: linear-gradient(135deg, #d4e8b0, #a8c878); }
+.p2 { background: linear-gradient(135deg, #f5d6c8, #e8a898); }
+.p3 { background: linear-gradient(135deg, #b8d8f0, #78b8e8); }
+.p4 { background: linear-gradient(135deg, #d8c8f0, #b898e0); }
+.p5 { background: linear-gradient(135deg, #f0e8b8, #e0c878); }
+ 
+.photo-label {
+  font-family: var(--font);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+ 
+/* ── Lightbox ──────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+ 
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+ 
+.lightbox-inner {
+  transform: scale(0.92);
+  transition: transform 0.25s ease;
+}
+ 
+.lightbox.open .lightbox-inner {
+  transform: scale(1);
+}
+ 
+.lightbox-frame {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+ 
+.lightbox-frame img {
+  display: block;
+  max-width: 80vw;
+  max-height: 75vh;
+  object-fit: contain;
+}
+ 
+.lightbox-label {
+  font-family: var(--font);
+  font-size: 11px;
+  color: var(--muted);
+  padding: 8px 14px;
+  border-top: 1px solid var(--card-border);
+  background: #fafaf8;
+}
+ 
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  transition: background 0.2s, transform 0.2s;
+  font-family: var(--font);
+  z-index: 1001;
+}
+ 
+.lightbox-close:hover {
+  background: rgba(255, 182, 206, 0.45);
+  transform: scale(1.1);
 }
