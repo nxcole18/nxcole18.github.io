@@ -592,4 +592,8 @@ body { position: relative; }
   .photo-scatter {
     display: none;
   }
+
+  .music-player {
+    display: none;
+  }
 }
