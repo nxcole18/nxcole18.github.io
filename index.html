@@ -33,9 +33,9 @@
     <section class="currently fade-in">
       <p class="section-label">welcome to my page!</p>
       <ul>
-        <li>💡 e-commerce merchandising and analytics @ oro eyewear</li>
+        <li>🖥️ e-commerce merchandising and analytics @ oro eyewear</li>
         <li>🎨 launching an etsy store for my art</li>
-        <li>✨ building my personal portfolio</li>
+        <li>🚀 building my personal portfolio</li>
       </ul>
     </section>
 
@@ -52,8 +52,8 @@
       </div>
     </section>
 
-    <p class="outro fade-in"><strong>vibes lately:</strong></p>
-    <p class="deco fade-in">✨🌅🧡🫧🌤️☁⋆˚࿔</p>
+    <!--  <p class="outro fade-in"><strong>vibes lately:</strong></p>  -->
+    <!--  <p class="deco fade-in">✨🌅🧡🫧🌤️☁⋆˚࿔</p> </p>  -->
   </main>
 
   <!-- Scattered Photos Elements -->
@@ -106,29 +106,58 @@
   <section class="projects fade-in">
     <h2 class="projects-header">MY BUILDS 🛠️</h2>
 
-    <a class="project-card" href="#" target="_blank">
+    <a class="project-card" href="https://github.com/nxcole18/cocoa-delicacy" target="_blank">
       <div class="project-image alpha-bg"></div>
       <div class="project-info">
         <h3>cocoa delicacy <span class="arrow">↗</span></h3>
-        <p class="project-tags">LOREM ✦ IPSUM ✦ LOREM</p>
+        <p class="project-tags">DATA VISUALIZATION •󠁏 JAVASCRIPT •󠁏 HTML/CSS </p>
         <p class="project-desc">description about my project here!</p>
         <p class="project-stat">💡 project stat</p>
         <!-- <span class="star">★</span> -->
       </div>
     </a>
 
-    <a class="project-card" href="#" target="_blank">
+    <a class="project-card" href="https://github.com/nxcole18/database-management-tool" target="_blank">
       <div class="project-image beta-bg"></div>
       <div class="project-info">
-        <h3>db manager <span class="arrow">↗</span></h3>
-        <p class="project-tags">LOREM ✦ IPSUM ✦ LOREM</p>
+        <h3>database manager <span class="arrow">↗</span></h3>
+        <p class="project-tags">RELATIONAL DATABASES 󠁯•󠁏 JAVA 󠁯•󠁏 SQL</p>
+        <p class="project-desc">description about my project here!</p>
+        <p class="project-stat">💡 project stat</p>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/nxcole18/database-management-tool" target="_blank">
+      <div class="project-image gamma-bg"></div>
+      <div class="project-info">
+        <h3>personal website <span class="arrow">↗</span></h3>
+        <p class="project-tags">WEB DEVELOPMENT 󠁯•󠁏 JAVASCRIPT 󠁯•󠁏 HTML/CSS</p>
         <p class="project-desc">description about my project here!</p>
         <p class="project-stat">💡 project stat</p>
       </div>
     </a>
   </section>
 
+   <!-- Music Player -->
+  <div class="music-player fade-in" id="music-player">
+    <div class="music-track-info">
+      <p class="music-title" id="music-title">Track title</p>
+      <p class="music-artist" id="music-artist">Artist</p>
+    </div>
+    <div class="music-progress-bar">
+      <div class="music-progress-fill" id="music-progress"></div>
+    </div>
+    <div class="music-controls">
+      <button class="music-btn" id="music-prev" aria-label="previous track">&#9198;</button>
+      <button class="music-btn music-btn-play" id="music-play" aria-label="play">&#9654;</button>
+      <button class="music-btn" id="music-next" aria-label="next track">&#9197;</button>
+    </div>
+  </div>
+
+  <audio id="audio-player"></audio>
+
   <script src="main.js"></script>
   <script src="photos.js"></script>
+  <script src="music.js"></script>
 </body>
 </html>
