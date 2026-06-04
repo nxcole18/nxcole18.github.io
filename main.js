@@ -1,51 +1,39 @@
 // ── Typewriter Effect ──────────────────────────────────────────
-const fullText = "hi! i'm nicole!";
-const nicoleWord = "nicole";
+// The title types out as "nicolelu" where:
+//   "nicole" = bold (via .nicole-bold)
+//   "lu" = pink (via .lu-pink)
+const part1 = "nicole"; // bold
+const part2 = "lu"; // pink
+const fullText = part1 + part2;
 const container = document.getElementById("typewriter-text");
 const cursor = document.querySelector(".cursor");
-
+ 
 let index = 0;
-const typingSpeed = 90; // ms per character
-
-// Find start/end positions of "nicole" in the full string
-const nicoleStart = fullText.indexOf(nicoleWord);
-const nicoleEnd = nicoleStart + nicoleWord.length;
-
+const typingSpeed = 80;
+ 
 function buildHTML(charIndex) {
-  const typed = fullText.slice(0, charIndex);
-
-  // Before "nicole" is fully typed, render plain text
-  if (charIndex <= nicoleStart) {
-    return typed;
+  if (charIndex <= part1.length) {
+    // Still typing "nicole"
+    return `<span class="nicole-bold">${fullText.slice(0, charIndex)}</span>`;
   }
-
-  // "nicole" is being typed or fully typed
-  const before = fullText.slice(0, nicoleStart);
-  const nicolePart = fullText.slice(nicoleStart, Math.min(charIndex, nicoleEnd));
-  const after = charIndex > nicoleEnd ? fullText.slice(nicoleEnd, charIndex) : "";
-
-  return (
-    before +
-    `<span class="nicole-highlight">${nicolePart}</span>` +
-    after
-  );
+  // Typing into "lu"
+  const pinkPart = fullText.slice(part1.length, charIndex);
+  return `<span class="nicole-bold">${part1}</span><span class="nicole-pink">${pinkPart}</span>`;
 }
-
+ 
 function type() {
   if (index <= fullText.length) {
     container.innerHTML = buildHTML(index);
     index++;
     setTimeout(type, typingSpeed);
   } else {
-    // Typing done — hide cursor after brief pause
     setTimeout(() => {
       cursor.classList.add("done");
       triggerFadeIns();
     }, 400);
   }
 }
-
-// Start typewriter after a short delay
+ 
 setTimeout(type, 300);
 
 

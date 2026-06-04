@@ -83,25 +83,48 @@ body {
 .hero {
   max-width: 680px;
   margin: 0 auto;
-  padding: 120px 32px 60px;
+  padding: 120px 32px 0px;
 }
 
 /* ── Typewriter Title ──────────────────────────────────── */
 .title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 12vw, 7rem);
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   min-height: 1.3em;
 }
 
-.title .nicole-highlight {
+.title-text {
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  min-height: 1.3em;
+}
+
+.title-text .nicole-highlight {
   background: var(--pink-highlight);
   border-radius: 3px;
   padding: 0 2px;
 }
 
+/* ── nicolelu Title ──────────────────────────────────── */
+.nicole-bold {
+  font-weight: 700;
+  color: var(--text);
+}
+ 
+.nicole-pink {
+  font-weight: 400;
+  color: var(--pink-dark);
+}
+ 
+/* Remove old highlight style (no longer used on index) */
+.nicole-highlight { background: none; }
+ 
 .cursor {
   display: inline-block;
   color: var(--pink-dark);
@@ -109,12 +132,12 @@ body {
   animation: blink 0.9s step-end infinite;
   margin-left: 1px;
 }
-
+ 
 .cursor.done {
   animation: none;
   opacity: 0;
 }
-
+ 
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
@@ -203,7 +226,7 @@ body {
 }
 
 .projects-header {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--text);
@@ -597,3 +620,27 @@ body { position: relative; }
     display: none;
   }
 }
+
+.lora-font {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+ 
+/* ── Line Art Divider ──────────────────────────────────── */
+.line-art-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0 16px;
+  background: var(--bg);
+}
+ 
+.line-art-img {
+  display: block;
+  width: 100px;
+  height: 95px;
+  opacity: 0.75;
+}
+ 
