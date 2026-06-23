@@ -3,165 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nicole's portfolio</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='100'>᯽</text></svg>">
+  <title>Nicole Lu</title>
+
+  <!-- Placeholder handwriting font — swap for your own fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Top-left nav -->
-  <nav class="side-nav">
-    <div class="logo"><a href="index.html"><span>᯽ nl</span></a></div>
-    <ul>
-      <li><a href="https://www.linkedin.com/in/nicole-lu-/" target="_blank">linkedin</a></li>
-      <li><a href="https://github.com/nxcole18" target="_blank">github</a></li>
-      <li><a href="textart.html">text art</a></li>
+  <!-- Full-page sky background -->
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo-link" aria-label="Home">
+      <img src="assets/logo.png" alt="Nicole Lu logo" class="nav-logo" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html"     class="nav-link">about</a></li>
+      <li><a href="projects.html"  class="nav-link">projects</a></li>
+      <li><a href="creations.html" class="nav-link">creations</a></li>
+      <li><a href="contact.html"   class="nav-link">contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <main class="hero">
-    <h1 class="title" aria-label="nicolelu">
-      <span id="typewriter-text"></span><span class="cursor">|</span>
-    </h1>
+  <!-- Earbuds music button (top-right) -->
+  <button class="earbuds-btn" id="earbuds-btn"
+          aria-label="Open music player" aria-expanded="false">
+    <img src="assets/earbuds.png" alt="Open music player" class="earbuds-img" />
+  </button>
 
+  <!-- Spotify popup -->
+  <div class="spotify-popup" id="spotify-popup"
+       role="dialog" aria-label="Spotify Music Player" aria-hidden="true">
+    <button class="spotify-close" id="spotify-close" aria-label="Close music player">×</button>
+    <!--
+      🎵 Replace the playlist ID in the src URL below with your own Spotify playlist.
+         To find your playlist ID: open the playlist on Spotify → Share → Copy link
+         URL format: https://open.spotify.com/playlist/YOUR_ID_HERE
+         Then embed URL: https://open.spotify.com/embed/playlist/YOUR_ID_HERE?utm_source=generator
+         
+    -->
+    <iframe
+      src="https://open.spotify.com/embed/playlist/1IgZZgn37JxftD3MLKK0Ry?utm_source=generator&si=4cc5adc45f87470b"
+      width="350"
+      height="350"
+      frameborder="0"
+      allowtransparency="true"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+      title="Spotify Music Player">
+    </iframe>
+  </div>
 
-    <!-- Subtitle Sections -->
-    <section class="currently fade-in">
-      <p class="section-label">welcome to my page!</p>
-      <ul>
-        <li>🖥️ e-commerce merchandising and analytics @ oro eyewear</li>
-        <li>🎨 launching an etsy store for my art</li>
-        <li>🚀 building my personal portfolio</li>
-      </ul>
-    </section>
+  <!-- Hero section -->
+  <main class="hero" aria-label="Hero">
 
-    <section class="inspired fade-in">
-      <p class="section-label">passionate about:</p>
-      <div class="tags">
-        <span class="tag">solving problems</span>
-        <span class="tag">playing piano</span>
-        <span class="tag">creating</span>
-        <span class="tag">sunsets</span>
-        <span class="tag">tea lattes</span>
-        <span class="tag">cats</span>
-        <span class="tag">taking nice photos</span>
+    <!-- Large cursive name — left side -->
+    <div class="hero-name">
+      <img src="assets/nicole-lu.png" alt="Nicole Lu" class="name-img" />
+    </div>
+
+    <!-- Scrap-paper note card — center-right -->
+    <div class="scrap-card" aria-label="About me highlights">
+      <img src="assets/scrap-paper.png" alt="Scrap paper note" class="scrap-img" />
+
+      <!-- Text written on the grid paper -->
+      <div class="scrap-text">
+        <ul>
+          <li>bcom in cs &amp; business</li>
+          <li>passionate about <span class="text-underline">creating</span>,
+              tinkering, art, &amp; learning</li>
+          <li><span class="text-underline">swe</span> with design &amp; data
+              experience</li>
+        </ul>
       </div>
-    </section>
+    </div>
 
   </main>
 
-  <!-- Line Art Divider -->
-  <div class="line-art-divider fade-in">
-    <img src="photos/leaf-line.png" alt="line art illustration" class="line-art-img" />
+  <!-- Decorative flowers — bottom-right -->
+  <div class="flowers-decor" aria-hidden="true">
+    <img src="assets/yellow-flowers.png" alt="" class="flowers-img" />
   </div>
 
-  <!-- Scattered Photos Elements -->
-  <div class="photo-scatter fade-in" aria-hidden="true">
-
-    <button class="scatter-photo" style="top: 160px; right: 340px; transform: rotate(3deg);"
-      data-src="photos/photo1.jpg" data-name="photo1.jpg">
-      <div class="photo-placeholder p1"></div>
-      <span class="photo-label">photo1.jpg</span>
-    </button>
-
-    <button class="scatter-photo" style="top: 360px; left: 230px; transform: rotate(-4deg);"
-      data-src="photos/photo2.jpg" data-name="photo2.jpg">
-      <div class="photo-placeholder p2"></div>
-      <span class="photo-label">photo2.jpg</span>
-    </button>
-
-    <button class="scatter-photo" style="top: 520px; left: 290px; transform: rotate(2deg);"
-      data-src="photos/photo3.jpg" data-name="photo3.jpg">
-      <div class="photo-placeholder p3"></div>
-      <span class="photo-label">photo3.jpg</span>
-    </button>
-
-    <button class="scatter-photo" style="top: 460px; right: 240px; transform: rotate(-2deg);"
-      data-src="photos/photo4.jpg" data-name="photo4.jpg">
-      <div class="photo-placeholder p4"></div>
-      <span class="photo-label">photo4.jpg</span>
-    </button>
-
-    <button class="scatter-photo" style="top: 380px; right: 160px; transform: rotate(5deg);"
-      data-src="photos/photo5.jpg" data-name="photo5.jpg">
-      <div class="photo-placeholder p5"></div>
-      <span class="photo-label">photo5.jpg</span>
-    </button>
-
+  <!-- Movie-caption typewriter bar -->
+  <div class="caption-bar" aria-live="polite">
+    <p class="caption-text" id="caption-text"></p>
   </div>
- 
-  <!-- Lightbox Photo Views -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="photo viewer">
-    <button class="lightbox-close" id="lightbox-close" aria-label="close">✕</button>
-    <div class="lightbox-inner">
-      <div class="lightbox-frame">
-        <img id="lightbox-img" src="" alt="" />
-        <span class="lightbox-label" id="lightbox-label"></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Projects Section -->
-  <section class="projects fade-in">
-    <h2 class="projects-header">my builds</h2>
-
-    <a class="project-card" href="https://github.com/nxcole18/cocoa-delicacy" target="_blank">
-      <div class="project-image alpha-bg"></div>
-      <div class="project-info">
-        <h3>cocoa delicacy <span class="arrow">↗</span></h3>
-        <p class="project-tags">DATA VISUALIZATION •󠁏 JAVASCRIPT •󠁏 HTML/CSS </p>
-        <p class="project-desc">description about my project here!</p>
-        <p class="project-stat">💡 project stat</p>
-        <!-- <span class="star">★</span> -->
-      </div>
-    </a>
-
-    <a class="project-card" href="https://github.com/nxcole18/database-management-tool" target="_blank">
-      <div class="project-image beta-bg"></div>
-      <div class="project-info">
-        <h3>database manager <span class="arrow">↗</span></h3>
-        <p class="project-tags">RELATIONAL DATABASES 󠁯•󠁏 JAVA 󠁯•󠁏 SQL</p>
-        <p class="project-desc">description about my project here!</p>
-        <p class="project-stat">💡 project stat</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://nxcole18.github.io/" target="_blank">
-      <div class="project-image gamma-bg"></div>
-      <div class="project-info">
-        <h3>personal website <span class="arrow">↗</span></h3>
-        <p class="project-tags">WEB DEVELOPMENT 󠁯•󠁏 JAVASCRIPT 󠁯•󠁏 HTML/CSS</p>
-        <p class="project-desc">description about my project here!</p>
-        <p class="project-stat">💡 project stat</p>
-      </div>
-    </a>
-  </section>
-
-   <!-- Music Player -->
-  <div class="music-player fade-in" id="music-player">
-    <div class="music-track-info">
-      <p class="music-title" id="music-title">Track title</p>
-      <p class="music-artist" id="music-artist">Artist</p>
-    </div>
-    <div class="music-progress-bar">
-      <div class="music-progress-fill" id="music-progress"></div>
-    </div>
-    <div class="music-controls">
-      <button class="music-btn" id="music-prev" aria-label="previous track">&#9198;</button>
-      <button class="music-btn music-btn-play" id="music-play" aria-label="play">&#9654;</button>
-      <button class="music-btn" id="music-next" aria-label="next track">&#9197;</button>
-    </div>
-  </div>
-
-  <audio id="audio-player"></audio>
 
   <script src="main.js"></script>
-  <script src="photos.js"></script>
-  <script src="music.js"></script>
 </body>
 </html>
