@@ -1,88 +1,61 @@
-/* ══════════════════════════════════════════════════════
-   Nicole Lu — Homepage
-   ══════════════════════════════════════════════════════ */
-
-
-/* ── 1. Active nav link ─────────────────────────────────
-   Adds an underline to whichever nav link matches
-   the current page URL. Works across all pages.
-   ───────────────────────────────────────────────────── */
-(function markActiveNavLink() {
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-
-  document.querySelectorAll('.nav-link').forEach(link => {
-    const linkFile = link.getAttribute('href');
-    if (linkFile === currentPath) {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-    }
-  });
-})();
-
-
-/* ── 2. Earbuds / Spotify popup ─────────────────────────
-   Click the earbuds image to open the Spotify embed
-   ───────────────────────────────────────────────────── */
-(function initMusicPlayer() {
-  const earbudsBtn   = document.getElementById('earbuds-btn');
-  const spotifyPop   = document.getElementById('spotify-popup');
-  const spotifyClose = document.getElementById('spotify-close');
-
-  if (!earbudsBtn || !spotifyPop) return;
-
-  function openPopup() {
-    spotifyPop.classList.add('open');
-    earbudsBtn.setAttribute('aria-expanded', 'true');
-    spotifyPop.setAttribute('aria-hidden', 'false');
+// ── Typewriter Effect ──────────────────────────────────────────
+// The title types out as "nicolelu" where:
+//   "nicole" = bold (via .nicole-bold)
+//   "lu" = pink (via .lu-pink)
+const part1 = "nicole"; // bold
+const part2 = "lu"; // pink
+const fullText = part1 + part2;
+const container = document.getElementById("typewriter-text");
+const cursor = document.querySelector(".cursor");
+ 
+let index = 0;
+const typingSpeed = 80;
+ 
+function buildHTML(charIndex) {
+  if (charIndex <= part1.length) {
+    // Still typing "nicole"
+    return `<span class="nicole-bold">${fullText.slice(0, charIndex)}</span>`;
   }
-
-  function closePopup() {
-    spotifyPop.classList.remove('open');
-    earbudsBtn.setAttribute('aria-expanded', 'false');
-    spotifyPop.setAttribute('aria-hidden', 'true');
+  // Typing into "lu"
+  const pinkPart = fullText.slice(part1.length, charIndex);
+  return `<span class="nicole-bold">${part1}</span><span class="nicole-pink">${pinkPart}</span>`;
+}
+ 
+function type() {
+  if (index <= fullText.length) {
+    container.innerHTML = buildHTML(index);
+    index++;
+    setTimeout(type, typingSpeed);
+  } else {
+    setTimeout(() => {
+      cursor.classList.add("done");
+      triggerFadeIns();
+    }, 400);
   }
+}
+ 
+setTimeout(type, 300);
 
-  earbudsBtn.addEventListener('click', () => {
-    spotifyPop.classList.contains('open') ? closePopup() : openPopup();
+
+// ── Fade-in on Scroll ──────────────────────────────────────────
+function triggerFadeIns() {
+  const elements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  elements.forEach((el, i) => {
+    // Stagger each element slightly
+    el.style.transitionDelay = `${i * 60}ms`;
+    observer.observe(el);
   });
-
-  spotifyClose.addEventListener('click', closePopup);
-
-  document.addEventListener('click', (e) => {
-    if (
-      spotifyPop.classList.contains('open') &&
-      !spotifyPop.contains(e.target) &&
-      !earbudsBtn.contains(e.target)
-    ) {
-      closePopup();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && spotifyPop.classList.contains('open')) {
-      closePopup();
-      earbudsBtn.focus();
-    }
-  });
-})();
-
-
-/* ── 3. Caption fade-in ─────────────────────────────────
-   Renders the full caption immediately, then fades it
-   in via a CSS class after a short delay.
-   ───────────────────────────────────────────────────── */
-(function initCaption() {
-  const captionEl = document.getElementById('caption-text');
-  if (!captionEl) return;
-
-  const PLAIN        = 'hey there! welcome to my '; // regular-weight part
-  const BOLD         = 'website';                    // bold part at the end
-  const START_DELAY  = 900;                          // ms before fade begins
-
-  captionEl.innerHTML =
-    PLAIN + `<span class="caption-bold">${BOLD}</span>`;
-
-  setTimeout(() => {
-    captionEl.classList.add('visible');
-  }, START_DELAY);
-})();
+}

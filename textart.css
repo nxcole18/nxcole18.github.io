@@ -1,0 +1,143 @@
+/* ── Text Art Page Extras ──────────────────────────────── */
+
+/* Make logo a link */
+.logo a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.logo a:hover { color: var(--pink-dark); }
+.logo a::after { display: none; }
+
+/* Active nav link */
+.nav-active {
+  color: var(--pink-dark) !important;
+}
+.nav-active::after {
+  width: 100% !important;
+}
+
+/* ── Art Gallery ───────────────────────────────────────── */
+.art-gallery {
+  background: var(--projects-bg);
+  padding: 10px 32px 80px;
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── Art Card ──────────────────────────────────────────── */
+.art-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 24px 20px 18px;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.art-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+  border-color: var(--pink-dark);
+}
+
+.art-card:active {
+  transform: translateY(-1px);
+}
+
+/* Pink shimmer on hover */
+.art-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--pink-highlight);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.art-card:hover::before { opacity: 1; }
+
+.art-pre {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre;
+  position: relative;
+  z-index: 1;
+}
+
+.art-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: lowercase;
+  position: relative;
+  z-index: 1;
+}
+
+.copy-hint {
+  font-size: 10px;
+  color: var(--pink-dark);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+.art-card:hover .copy-hint { opacity: 1; }
+
+/* Copied state */
+.art-card.copied {
+  border-color: var(--pink-dark);
+}
+.art-card.copied .copy-hint {
+  opacity: 1;
+  content: '✓ copied!';
+}
+
+/* ── Toast ─────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 12px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .art-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
