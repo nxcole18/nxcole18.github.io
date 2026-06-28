@@ -1,9 +1,9 @@
 // ── Typewriter Effect ──────────────────────────────────────────
 // The title types out as "nicolelu" where:
 //   "nicole" = bold (via .nicole-bold)
-//   "lu" = pink (via .lu-pink)
-const part1 = "nicole"; // bold
-const part2 = "lu"; // pink
+//   "lu" = blue (via .lu-blue)
+const part1 = "Nicole "; // bold
+const part2 = "Lu"; // blue
 const fullText = part1 + part2;
 const container = document.getElementById("typewriter-text");
 const cursor = document.querySelector(".cursor");
@@ -17,8 +17,8 @@ function buildHTML(charIndex) {
     return `<span class="nicole-bold">${fullText.slice(0, charIndex)}</span>`;
   }
   // Typing into "lu"
-  const pinkPart = fullText.slice(part1.length, charIndex);
-  return `<span class="nicole-bold">${part1}</span><span class="nicole-pink">${pinkPart}</span>`;
+  const bluePart = fullText.slice(part1.length, charIndex);
+  return `<span class="nicole-bold">${part1}</span><span class="nicole-blue">${bluePart}</span>`;
 }
  
 function type() {

@@ -1,18 +1,25 @@
 /* ── Variables ─────────────────────────────────────────── */
 :root {
   --bg: #ffffff;
-  --text: #1a1a1a;
-  --muted: #555;
-  --pink: #f9c0c3;
-  --pink-highlight: rgba(255, 188, 196, 0.45);
-  --pink-mid: #f09da3;
-  --pink-dark: #de747f;
+  --text: #504d4d;
+  --muted: #6f6969;
+  --blue: #718fc6;
+  --blue-highlight: #718fc667;
+  --blue-mid: #718fc6;
+  --blue-dark: #48618e;
   --tag-bg: #fff;
   --tag-border: #ccc;
   --card-bg: #fafaf8;
   --card-border: #e8e5e0;
   --projects-bg: #ffffff;
-  --font: 'Space Mono', 'Courier New', monospace;
+  --font: 'Space Mono', 'Courier New', monospace
+}
+
+@font-face {
+  font-family: 'CMUSerifItalic';
+  src: url('fonts/CMUSerifItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* ── Reset ─────────────────────────────────────────────── */
@@ -73,11 +80,11 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--pink-dark);
+  background: var(--blue-dark);
   transition: width 0.25s ease;
 }
 
-.side-nav a:hover { color: var(--pink-dark); }
+.side-nav a:hover { color: var(--blue-dark); }
 .side-nav a:hover::after { width: 100%; }
 
 /* ── Hero ──────────────────────────────────────────────── */
@@ -89,37 +96,25 @@ body {
 
 /* ── Typewriter Title ──────────────────────────────────── */
 .title {
-  font-size: clamp(3rem, 12vw, 7rem);
-  font-weight: 600;
+  font-family: 'CMUSerifItalic', serif;
+  font-size: clamp(2rem, 7vw, 3.3rem);
+  text-align: center;
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   min-height: 1.3em;
 }
 
-.title-text {
-  font-size: clamp(2rem, 8vw, 5rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 20px;
-  min-height: 1.3em;
-}
-
-.title-text .nicole-highlight {
-  background: var(--pink-highlight);
-  border-radius: 3px;
-  padding: 0 2px;
-}
-
-/* ── nicolelu Title ──────────────────────────────────── */
+/* ── Nicole Lu Title ──────────────────────────────────── */
 .nicole-bold {
-  font-weight: 700;
+  font-family: 'CMUSerifItalic', serif;
+  font-weight: normal;
   color: var(--text);
 }
  
-.nicole-pink {
-  font-weight: 400;
-  color: var(--pink-mid);
+.nicole-blue {
+  font-family: 'CMUSerifItalic', serif;
+  font-weight: normal;
+  color: var(--text);
 }
  
 /* Remove old highlight style (no longer used on index) */
@@ -127,7 +122,7 @@ body {
  
 .cursor {
   display: inline-block;
-  color: var(--pink-dark);
+  color: var(--blue-dark);
   font-weight: 400;
   animation: blink 0.9s step-end infinite;
   margin-left: 1px;
@@ -144,6 +139,17 @@ body {
 }
 
 /* ── Currently & Inspired By Sections ───────────────────────────────── */
+.section-label1 {
+  font-family: 'CMUSerifItalic', serif;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
 .section-label {
   font-weight: 700;
   font-size: 13px;
@@ -191,8 +197,8 @@ body {
 }
 
 .tag:hover {
-  background: var(--pink-highlight);
-  border-color: var(--pink-dark);
+  background: var(--blue-highlight);
+  border-color: var(--blue-dark);
 }
 
 .outro {
@@ -202,7 +208,7 @@ body {
 
 .deco {
   font-size: 18px;
-  color: var(--pink-dark);
+  color: var(--blue-dark);
   letter-spacing: 4px;
   opacity: 0.75;
 }
@@ -307,7 +313,7 @@ body {
   transition: color 0.2s;
 }
 
-.project-card:hover .arrow { color: var(--pink-dark); }
+.project-card:hover .arrow { color: var(--blue-dark); }
 
 .project-tags {
   font-size: 10px;
@@ -602,8 +608,8 @@ body { position: relative; }
 }
  
 .music-btn:hover {
-  background: var(--pink-highlight);
-  color: var(--pink-dark);
+  background: var(--blue-highlight);
+  color: var(--blue-dark);
 }
  
 .music-btn-play {
@@ -619,13 +625,6 @@ body { position: relative; }
   .music-player {
     display: none;
   }
-}
-
-.lora-font {
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
 }
  
 /* ── Line Art Divider ──────────────────────────────────── */
