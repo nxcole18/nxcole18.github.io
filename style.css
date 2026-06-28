@@ -4,9 +4,8 @@
   --text: #504d4d;
   --muted: #6f6969;
   --blue: #718fc6;
-  --blue-highlight: #718fc667;
-  --blue-mid: #718fc6;
-  --blue-dark: #48618e;
+  --blue-highlight: #89a9e480;
+  --blue-dark: #405783;
   --tag-bg: #fff;
   --tag-border: #ccc;
   --card-bg: #fafaf8;
@@ -131,6 +130,7 @@ body {
 .cursor.done {
   animation: none;
   opacity: 0;
+  width: 0;
 }
  
 @keyframes blink {
@@ -148,6 +148,38 @@ body {
   letter-spacing: 0.02em;
   margin-bottom: 10px;
   color: var(--text);
+}
+
+/* ── Cycling Word ──────────────────────────────────────────── */
+.cycling-word {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.cycling-word:hover {
+  color: var(--blue);
+}
+
+/* ── Subtitle Image Box ────────────────────────────────────── */
+.subtitle-image-box {
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--text);
+  border-radius: 8px;
+  margin-top: 20px;
+  pointer-events: none;
+  background: transparent;
+}
+
+.subtitle-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px; /* 1px less than the box to avoid corner bleed */
+  display: block;
 }
 
 .section-label {
@@ -186,7 +218,7 @@ body {
 }
 
 .tag {
-  border: 1px solid var(--tag-border);
+  border: 1px solid var(--blue);
   border-radius: 999px;
   padding: 5px 14px;
   font-size: 12px;
@@ -232,7 +264,8 @@ body {
 }
 
 .projects-header {
-  font-size: 14px;
+  font-family: 'CMUSerifItalic', serif;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--text);
@@ -269,29 +302,17 @@ body {
   overflow: hidden;
 }
 
-.alpha-bg {
-  background: linear-gradient(135deg, #a8c8ff 0%, #3a7bd5 50%, #1a3faf 100%);
-}
 
-.beta-bg {
-  background: linear-gradient(135deg, #4f8160 0%, #1a3a27 60%, #0f2318 100%);
+.alpha-bg {
+  background: linear-gradient(135deg, #ebb7c2 0%, #ca91a3 60%, #824e5e 100%);
 }
 
 .gamma-bg {
-  background: linear-gradient(135deg, #e9a7bd 0%, #cb829a 60%, #8f4d62 100%);
+  background: linear-gradient(135deg, #a8c8ff 0%, #5b86c2 50%, #3a5194 100%);
 }
 
-.ibm-badge {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(255,255,255,0.9);
-  color: #1a1a1a;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  padding: 4px 10px;
-  border-radius: 6px;
+.beta-bg {
+  background: linear-gradient(135deg, #4f8160 0%, #284e37 60%, #14271d 100%);
 }
 
 .project-info {
@@ -641,5 +662,12 @@ body { position: relative; }
   width: 100px;
   height: 95px;
   opacity: 0.75;
+}
+ 
+/* ── Logo ──────────────────────────────────── */
+.logo-img {
+  display: block;
+  width: 80px;
+  height: 80px;
 }
  

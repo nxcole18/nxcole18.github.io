@@ -59,3 +59,23 @@ function triggerFadeIns() {
     observer.observe(el);
   });
 }
+
+// ── Cycling Word ───────────────────────────────────────────
+const cyclingWords = ['visuals', 'people', 'detail'];
+let wordIndex = 0;
+const cyclingWordEl = document.getElementById('cycling-word');
+
+if (cyclingWordEl) {
+  cyclingWordEl.addEventListener('click', () => {
+    wordIndex = (wordIndex + 1) % cyclingWords.length;
+
+    // Fade out → swap → fade in
+    cyclingWordEl.style.opacity = '0';
+    setTimeout(() => {
+      cyclingWordEl.textContent = cyclingWords[wordIndex];
+      cyclingWordEl.style.opacity = '1';
+    }, 150);
+  });
+
+  cyclingWordEl.style.transition = 'opacity 0.15s ease, color 0.2s';
+}
