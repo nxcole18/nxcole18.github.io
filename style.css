@@ -88,7 +88,7 @@ body {
 
 /* ── Hero ──────────────────────────────────────────────── */
 .hero {
-  max-width: 680px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 120px 32px 0px;
 }
@@ -651,7 +651,7 @@ body { position: relative; }
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 0 16px;
+  padding-top: 20px;
   background: var(--bg);
 }
  

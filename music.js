@@ -8,7 +8,7 @@
 // ──────────────────────────────────────────────────────────────
 
 const playlist = [
-  { src: "music/track1.mp3", title: "track 1",  artist: "artist name" },
+  { src: "music/track1.mp3", title: "u + me = <3",  artist: "olivia rodrigo" },
   { src: "music/track2.mp3", title: "track 2",  artist: "artist name" },
   { src: "music/track3.mp3", title: "track 3",  artist: "artist name" },
 ];
