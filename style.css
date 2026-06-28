@@ -116,9 +116,6 @@ body {
   color: var(--text);
 }
  
-/* Remove old highlight style (no longer used on index) */
-.nicole-highlight { background: none; }
- 
 .cursor {
   display: inline-block;
   color: var(--blue-dark);
@@ -138,14 +135,14 @@ body {
   50%       { opacity: 0; }
 }
 
-/* ── Currently & Inspired By Sections ───────────────────────────────── */
-.section-label1 {
+/* ── Tagline and "Passionate About"  ───────────────────────────────── */
+.tagline {
   font-family: 'CMUSerifItalic', serif;
   text-align: center;
   font-weight: normal;
   font-size: 20px;
   font-style: italic;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
   margin-bottom: 10px;
   color: var(--text);
 }
@@ -170,6 +167,7 @@ body {
   border: 1px solid var(--text);
   border-radius: 8px;
   margin-top: 20px;
+  margin-bottom: 20px;
   pointer-events: none;
   background: transparent;
 }
@@ -265,9 +263,9 @@ body {
 
 .projects-header {
   font-family: 'CMUSerifItalic', serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.09em;
   color: var(--text);
   text-align: center;
   margin-bottom: 52px;
@@ -659,8 +657,9 @@ body { position: relative; }
  
 .line-art-img {
   display: block;
+  margin-top: 20px;
   width: 100px;
-  height: 95px;
+  height: 90px;
   opacity: 0.75;
 }
  
